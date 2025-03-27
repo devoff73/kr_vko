@@ -107,8 +107,8 @@ while :
 do
     for file in `ls $targets_dir -t 2>/dev/null | head -30`
     do
-        x=`cat 7a3975336a36633349664c61376276 | awk '{print $2}'`
-        y=`cat 7a3975336a36633349664c61376276 | awk '{print $4}'`
+        x=`cat $targets_dir$file | awk '{print $2}'`
+        y=`cat $targets_dir$file | awk '{print $4}'`
         id=$(decrypt_filename "$file")
         let dx=$x0-$x
         let dy=$y0-$y
